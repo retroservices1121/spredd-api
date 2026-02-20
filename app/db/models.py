@@ -26,12 +26,14 @@ class Tier(str, enum.Enum):
     FREE = "free"
     BUILDER = "builder"
     PRO = "pro"
+    FEED = "feed"
 
 
 TIER_LIMITS = {
     Tier.FREE: {"rpm": 60, "tpm": 5},
     Tier.BUILDER: {"rpm": 300, "tpm": 30},
     Tier.PRO: {"rpm": 1000, "tpm": 100},
+    Tier.FEED: {"rpm": 3000, "tpm": 0},
 }
 
 

@@ -47,6 +47,11 @@ class Settings(BaseSettings):
     evm_fee_account: str = ""
     evm_fee_bps: int = 50
 
+    # Feed (Bittensor subnet canonical feed)
+    feed_ws_interval_seconds: int = 5
+    feed_canary_interval_seconds: int = 60
+    feed_canary_enabled: bool = True
+
     model_config = {"env_file": ".env", "env_file_encoding": "utf-8"}
 
 

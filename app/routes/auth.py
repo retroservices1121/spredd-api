@@ -42,7 +42,7 @@ async def create_api_key(req: CreateAPIKeyRequest, db: AsyncSession = Depends(ge
     try:
         tier = Tier(req.tier)
     except ValueError:
-        raise HTTPException(status_code=400, detail=f"Invalid tier: {req.tier}. Must be free, builder, or pro")
+        raise HTTPException(status_code=400, detail=f"Invalid tier: {req.tier}. Must be free, builder, pro, or feed")
 
     limits = TIER_LIMITS[tier]
     full_key, prefix, key_hash = generate_api_key()
